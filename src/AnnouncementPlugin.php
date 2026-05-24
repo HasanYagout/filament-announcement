@@ -10,7 +10,9 @@ use HasanYagout\Announcement\Filament\Resources\AnnouncementResource;
 class AnnouncementPlugin implements Plugin
 {
     protected bool $databaseNotifications = true;
+
     protected array $customRecipientModels = [];
+
     public function getId(): string
     {
         return 'announcement';
@@ -26,21 +28,25 @@ class AnnouncementPlugin implements Plugin
         $panel
             ->resources([AnnouncementResource::class])
             ->widgets([AnnouncementsWidget::class])
-        ->databaseNotifications($this->databaseNotifications);
+            ->databaseNotifications($this->databaseNotifications);
     }
 
     public function boot(Panel $panel): void
     {
         //
     }
+
     public function withDatabaseNotifications(bool $enabled = true): static
     {
         $this->databaseNotifications = $enabled;
+
         return $this;
     }
+
     public function withCustomRecipients(array $models): static
     {
         $this->customRecipientModels = $models;
+
         return $this;
     }
 
@@ -48,6 +54,4 @@ class AnnouncementPlugin implements Plugin
     {
         return app(static::class);
     }
-
-
 }

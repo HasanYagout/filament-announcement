@@ -6,11 +6,10 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 class Announcement
 {
-
     protected $table = 'announcements';
 
     protected array $fillable = [
-        'title', 'body', 'type', 'icon', 'color', 'target_type', 'target_id', 'sent_at'
+        'title', 'body', 'type', 'icon', 'color', 'target_type', 'target_id', 'sent_at',
     ];
 
     protected $casts = [

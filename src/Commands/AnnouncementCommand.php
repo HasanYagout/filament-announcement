@@ -9,6 +9,7 @@ use Symfony\Component\Console\Command\Command as CommandAlias;
 class AnnouncementCommand extends Command
 {
     protected $signature = 'announcements:send';
+
     protected $description = 'Send pending announcements';
 
     public function handle(): int

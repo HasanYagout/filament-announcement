@@ -7,7 +7,6 @@ use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
-use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
@@ -56,6 +55,7 @@ class AnnouncementResource extends Resource
                         foreach ($customModels as $modelClass) {
                             $options[$modelClass] = class_basename($modelClass);
                         }
+
                         return $options;
                     })
                     ->required()
@@ -65,9 +65,10 @@ class AnnouncementResource extends Resource
                     ->label('Recipient')
                     ->options(function ($get) {
                         $type = $get('target_type');
-                        if (!$type || !class_exists($type)) {
+                        if (! $type || ! class_exists($type)) {
                             return [];
                         }
+
                         // Dynamically fetch records from the selected model
                         return $type::pluck('name', 'id')->toArray();
                     })
@@ -95,6 +96,7 @@ class AnnouncementResource extends Resource
                 DeleteBulkAction::make(),
             ]);
     }
+
     public static function getPages(): array
     {
         return [
@@ -103,5 +105,4 @@ class AnnouncementResource extends Resource
             'edit' => EditAnnouncement::route('/{record}/edit'),
         ];
     }
-
 }
