@@ -2,36 +2,57 @@
 
 namespace HasanYagout\Announcement\Models;
 
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
+use Illuminate\Database\Eloquent\Builder;
 
-class Announcement
+class Announcement extends Model
 {
 
     protected $table = 'announcements';
 
-    protected array $fillable = [
-        'title', 'body', 'type', 'icon', 'color', 'target_type', 'target_id', 'sent_at'
+    protected $fillable = [
+        'title',
+        'body',
+        'is_active',
+        'type',
+        'is_dismissible',
+        'is_global',
+        'starts_at',
+        'ends_at',
     ];
 
     protected $casts = [
-        'sent_at' => 'datetime',
+        'type' => \HasanYagout\Announcement\Enums\AnnouncementType::class,
+        'is_active' => 'boolean',
+        'is_global' => 'boolean',
+        'starts_at' => 'datetime',
+        'ends_at' => 'datetime',
     ];
-
-    public function target(): MorphTo
+    public function scopeVisibleForDashboard(Builder $query): Builder
     {
-        return $this->morphTo();
+        return $query
+            ->where('is_active', true)
+            ->where(function (Builder $q): void {
+                $q->whereNull('starts_at')->orWhere('starts_at', '<=', now());
+            })
+            ->where(function (Builder $q): void {
+                $q->whereNull('ends_at')->orWhere('ends_at', '>', now());
+            });
     }
 
-    public function send(): void
+    public function scopeOrderedForDisplay(Builder $query): Builder
     {
-        $this->update(['sent_at' => now()]);
-
-        // Use Laravel's notification system
-        $targetClass = $this->target_type;
-        $target = $targetClass::find($this->target_id);
-
-        if ($target && method_exists($target, 'notify')) {
-            $target->notify(new AnnouncementNotification($this));
-        }
+        return $query
+            ->orderByRaw("CASE type WHEN 'danger' THEN 1 WHEN 'warning' THEN 2 WHEN 'info' THEN 3 WHEN 'success' THEN 4 ELSE 5 END")
+            ->orderByDesc('created_at');
     }
+
+    public function recipients(): HasMany
+    {
+        return $this->hasMany(AnnouncementRecipient::class);
+    }
+
+
 }

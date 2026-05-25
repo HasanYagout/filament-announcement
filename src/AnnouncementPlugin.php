@@ -5,12 +5,20 @@ namespace HasanYagout\Announcement;
 use Filament\Contracts\Plugin;
 use Filament\Facades\Filament;
 use Filament\Panel;
+use Filament\Support\Facades\FilamentView;
+use Filament\View\PanelsRenderHook;
 use HasanYagout\Announcement\Filament\Resources\AnnouncementResource;
+use HasanYagout\Announcement\Livewire\GlobalAnnouncementBanner;
+use HasanYagout\Announcement\Models\Announcement;
+use Illuminate\Support\Facades\DB;
+use Livewire\Livewire;
+
 
 class AnnouncementPlugin implements Plugin
 {
     protected bool $databaseNotifications = true;
     protected array $customRecipientModels = [];
+        protected string $pollingInterval = '5s';
     public function getId(): string
     {
         return 'announcement';
@@ -24,24 +32,49 @@ class AnnouncementPlugin implements Plugin
     public function register(Panel $panel): void
     {
         $panel
-            ->resources([AnnouncementResource::class])
-            ->widgets([AnnouncementsWidget::class])
+        ->resources([AnnouncementResource::class])
         ->databaseNotifications($this->databaseNotifications);
+    }
+    protected function getListeners(): array
+    {
+        return [];
     }
 
     public function boot(Panel $panel): void
     {
-        //
+        FilamentView::registerRenderHook(
+            PanelsRenderHook::BODY_START,
+            fn (): string => \Livewire\Livewire::mount(
+                GlobalAnnouncementBanner::class,
+                [
+                    'pollingInterval' => $this->getPollingInterval(),
+                ]
+            )
+        );
     }
     public function withDatabaseNotifications(bool $enabled = true): static
     {
         $this->databaseNotifications = $enabled;
         return $this;
     }
+
     public function withCustomRecipients(array $models): static
     {
         $this->customRecipientModels = $models;
         return $this;
+    }
+
+
+    public function pollingInterval(string $interval): static
+    {
+        $this->pollingInterval = $interval;
+
+        return $this;
+    }
+
+    public function getPollingInterval(): string
+    {
+        return $this->pollingInterval;
     }
 
     public static function make(): static

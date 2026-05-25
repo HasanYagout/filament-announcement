@@ -1,14 +1,21 @@
 {
-    "name": "hasanyagout/announcement",
-    "description": "A plugin for broadcasting announcements for different users",
+    "name": "hasanyagout/filament-announcements",
+    "description": "Global announcement system for different users",
     "keywords": [
         "HasanYagout",
+        "hasanyagout",
         "laravel",
         "filamentphp",
         "filament",
         "filament-plugin",
+        "filament-v5",
+        "laravel",
+        "dashboard",
+        "announcements",
+        "alerts",
         "announcement"
     ],
+    "type": "library",
     "homepage": "https://github.com/hasanyagout/announcement",
     "support": {
         "issues": "https://github.com/hasanyagout/announcement/issues",
@@ -18,7 +25,6 @@
     "authors": [
         {
             "name": "Hasan Yagout",
-            "email": "yagouthasan3@gmail.com",
             "role": "Developer"
         }
     ],
@@ -28,16 +34,8 @@
         "spatie/laravel-package-tools": "^1.15.0"
     },
     "require-dev": {
-        "larastan/larastan": "^3.0",
         "laravel/pint": "^1.0",
-        "nunomaduro/collision": "^8.0",
-        "orchestra/testbench": "^9.0|^10.0|^11.0",
-        "pestphp/pest": "^3.7|^4.0",
-        "pestphp/pest-plugin-arch": "^3.0|^4.0",
-        "pestphp/pest-plugin-laravel": "^3.0|^4.0",
-        "pestphp/pest-plugin-livewire": "^3.0|^4.0",
-        "rector/rector": "^2.0",
-        "spatie/laravel-ray": "^1.26"
+        "orchestra/testbench": "^9.0|^10.0|^11.0"
     },
     "autoload": {
         "psr-4": {

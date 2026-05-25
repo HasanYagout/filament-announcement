@@ -34,117 +34,22 @@ class AnnouncementServiceProvider extends PackageServiceProvider
             ->hasConfigFile()
             ->hasViews()
             ->hasTranslations()
-            ->hasMigrations(['create_announcements_table'])
-            ->hasCommands([SendAnnouncementCommand::class]);
-//
-//        $configFileName = $package->shortName();
-//
-//        if (file_exists($package->basePath("/../config/{$configFileName}.php"))) {
-//            $package->hasConfigFile();
-//        }
-//
-//        if (file_exists($package->basePath('/../database/migrations'))) {
-//            $package->hasMigrations($this->getMigrations());
-//        }
-//
-//        if (file_exists($package->basePath('/../resources/lang'))) {
-//            $package->hasTranslations();
-//        }
-//
-//        if (file_exists($package->basePath('/../resources/views'))) {
-//            $package->hasViews(static::$viewNamespace);
-//        }
+            ->hasMigrations([
+                'create_announcement_table',
+                'create_announcement_recipients_table',
+            ]);
     }
 
-//    public function packageRegistered(): void {}
-//
-//    public function packageBooted(): void
-//    {
-//        // Asset Registration
-//        FilamentAsset::register(
-//            $this->getAssets(),
-//            $this->getAssetPackageName()
-//        );
-//
-//        FilamentAsset::registerScriptData(
-//            $this->getScriptData(),
-//            $this->getAssetPackageName()
-//        );
-//
-//        // Icon Registration
-//        FilamentIcon::register($this->getIcons());
-//
-//        // Handle Stubs
-//        if (app()->runningInConsole()) {
-//            foreach (app(Filesystem::class)->files(__DIR__ . '/../stubs/') as $file) {
-//                $this->publishes([
-//                    $file->getRealPath() => base_path("stubs/announcement/{$file->getFilename()}"),
-//                ], 'announcement-stubs');
-//            }
-//        }
-//
-//        // Testing
-//        Testable::mixin(new TestsAnnouncement);
-//    }
-//
-//    protected function getAssetPackageName(): ?string
-//    {
-//        return 'hasanyagout/announcement';
-//    }
-//
-//    /**
-//     * @return array<Asset>
-//     */
-//    protected function getAssets(): array
-//    {
-//        return [
-//            // AlpineComponent::make('announcement', __DIR__ . '/../resources/dist/components/announcement.js'),
-//            // Css::make('announcement-styles', __DIR__ . '/../resources/dist/announcement.css'),
-//            // Js::make('announcement-scripts', __DIR__ . '/../resources/dist/announcement.js'),
-//        ];
-//    }
-//
-//    /**
-//     * @return array<class-string>
-//     */
-//    protected function getCommands(): array
-//    {
-//        return [
-//            AnnouncementCommand::class,
-//        ];
-//    }
-//
-//    /**
-//     * @return array<string>
-//     */
-//    protected function getIcons(): array
-//    {
-//        return [];
-//    }
-//
-//    /**
-//     * @return array<string>
-//     */
-//    protected function getRoutes(): array
-//    {
-//        return [];
-//    }
-//
-//    /**
-//     * @return array<string, mixed>
-//     */
-//    protected function getScriptData(): array
-//    {
-//        return [];
-//    }
-//
-//    /**
-//     * @return array<string>
-//     */
-//    protected function getMigrations(): array
-//    {
-//        return [
-//            'create_announcement_table',
-//        ];
-//    }
+    public function boot(): void
+    {
+        $this->loadViewsFrom(
+            __DIR__ . '/../resources/views',
+            'announcements'
+        );
+
+        $this->loadTranslationsFrom(
+            __DIR__ . '/../resources/lang',
+            'announcements'
+        );
+    }
 }
