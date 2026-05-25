@@ -15,11 +15,7 @@ class GlobalAnnouncementBanner extends Component
             return collect();
         }
 
-        $resolver = config('announcement.resolver');
 
-        if (is_callable($resolver)) {
-            return $resolver($user);
-        }
 
         return $this->defaultAnnouncements($user);
     }

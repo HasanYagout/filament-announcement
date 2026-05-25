@@ -13,7 +13,6 @@ return [
 
 
     ],
-    'resolver' => null,
 
     'polling_interval' => 30, // seconds
 
