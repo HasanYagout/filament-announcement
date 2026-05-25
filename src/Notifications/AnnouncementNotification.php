@@ -2,14 +2,14 @@
 
 namespace HasanYagout\Announcement\Notifications;
 
+use Filament\Notifications\DatabaseNotification;
 use Filament\Notifications\Notification;
-use Illuminate\Bus\Queueable;
 use Filament\Notifications\Notification as FilamentNotification;
+use Illuminate\Bus\Queueable;
 
 class AnnouncementNotification extends Notification
 {
     use Queueable;
-
 
     protected $announcement;
 
@@ -23,7 +23,7 @@ class AnnouncementNotification extends Notification
         return ['database'];
     }
 
-    public function toDatabase($notifiable): \Filament\Notifications\DatabaseNotification
+    public function toDatabase($notifiable): DatabaseNotification
     {
         return FilamentNotification::make()
             ->title($this->announcement->title)
@@ -32,6 +32,4 @@ class AnnouncementNotification extends Notification
             ->status($this->announcement->type)
             ->getDatabaseMessage();
     }
-
-
 }
