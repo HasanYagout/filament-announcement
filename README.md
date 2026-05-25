@@ -251,7 +251,6 @@ Please review [our security policy](.github/SECURITY.md) on how to report securi
 ## Credits
 
 - [Hasan Yagout](https://github.com/HasanYagout)
-- [All Contributors](../../contributors)
 
 ---
 
