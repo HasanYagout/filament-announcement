@@ -2,10 +2,18 @@
 
 <p align="center">
     <a href="https://packagist.org/packages/hasanyagout/filament-announcements">
-        <img src="https://img.shields.io/packagist/v/hasanyagout/filament-announcements?style=flat-square" alt="Latest Version" />
+            <img src="https://img.shields.io/packagist/v/hasanyagout/filament-announcements?style=flat-square" alt="Latest Version" />
     </a>
 
-<a href="https://packagist.org/packages/hasanyagout/filament-announcements"> <img src="https://img.shields.io/packagist/dt/hasanyagout/filament-announcements?style=flat-square" alt="Total Downloads"> </a> <a href="https://packagist.org/packages/hasanyagout/filament-announcements"> <img src="https://img.shields.io/packagist/php-v/hasanyagout/filament-announcements?style=flat-square" alt="PHP Version"> </a> <a href="https://github.com/HasanYagout/announcement/blob/main/LICENSE.md"> <img src="https://img.shields.io/github/license/HasanYagout/announcement?style=flat-square" alt="License"> </a>
+<a href="https://packagist.org/packages/hasanyagout/filament-announcements"> 
+        <img src="https://img.shields.io/packagist/dt/hasanyagout/filament-announcements?style=flat-square" alt="Total Downloads">
+</a>
+<a href="https://packagist.org/packages/hasanyagout/filament-announcements">
+    <img src="https://img.shields.io/packagist/php-v/hasanyagout/filament-announcements?style=flat-square" alt="PHP Version"> 
+</a> 
+<a href="https://github.com/HasanYagout/announcement/blob/main/LICENSE.md"> 
+    <img src="https://img.shields.io/github/license/HasanYagout/announcement?style=flat-square" alt="License"> 
+</a>
     
 </p>
 
