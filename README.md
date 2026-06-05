@@ -5,6 +5,7 @@
         <img src="https://img.shields.io/packagist/v/hasanyagout/filament-announcements?style=flat-square" alt="Latest Version" />
     </a>
 
+
     <a href="https://packagist.org/packages/hasanyagout/filament-announcements">
         <img src="https://img.shields.io/packagist/dt/hasanyagout/filament-announcements?style=flat-square" alt="Total Downloads" />
     </a>
@@ -17,6 +18,7 @@
         <img src="https://img.shields.io/github/license/HasanYagout/announcement?style=flat-square" alt="License" />
     </a>
 </p>
+
 
 A powerful Filament plugin for broadcasting announcements to all users or specific recipients with support for scheduling, dismissible alerts, live updates, and custom recipient models.
 
@@ -43,7 +45,7 @@ A powerful Filament plugin for broadcasting announcements to all users or specif
 Install the package via Composer:
 
 ```bash
-composer require hasanyagout/announcements
+composer require hasanyagout/filament-announcements
 ```
 
 > [!IMPORTANT]
@@ -55,7 +57,7 @@ composer require hasanyagout/announcements
 After setting up a custom theme, add the plugin views to your theme CSS file:
 
 ```css
-@source '../../../../vendor/hasanyagout/announcement/resources/**/*.blade.php';
+@source '../../../../vendor/hasanyagout/announcements/resources/**/*.blade.php';
 ```
 
 Publish and run migrations:
