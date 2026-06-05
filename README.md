@@ -12,7 +12,7 @@
     <img src="https://img.shields.io/packagist/php-v/hasanyagout/filament-announcements?style=flat-square" alt="PHP Version"> 
 </a> 
 <a href="https://github.com/HasanYagout/filament-announcement/blob/main/LICENSE"> 
-    <img src="https://img.shields.io/github/license/HasanYagout/announcement?style=flat-square" alt="License"> 
+    <img src="https://img.shields.io/github/license/HasanYagout/filament-announcement?style=flat-square" alt="License"> 
 </a>
     
 </p>
