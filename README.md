@@ -5,11 +5,11 @@
         <img src="https://img.shields.io/packagist/v/hasanyagout/announcement?style=flat-square" alt="Latest Version" />
     </a>
 
-    <a href="https://packagist.org/packages/hasanyagout/announcement">
+    <a href="https://packagist.org/packages/hasanyagout/filament-announcements">
         <img src="https://img.shields.io/packagist/dt/hasanyagout/announcement?style=flat-square" alt="Total Downloads" />
     </a>
 
-    <a href="https://packagist.org/packages/hasanyagout/announcement">
+    <a href="https://packagist.org/packages/hasanyagout/filament-announcements">
         <img src="https://img.shields.io/packagist/php-v/hasanyagout/announcement?style=flat-square" alt="PHP Version" />
     </a>
 
