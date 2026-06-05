@@ -11,7 +11,7 @@
 <a href="https://packagist.org/packages/hasanyagout/filament-announcements">
     <img src="https://img.shields.io/packagist/php-v/hasanyagout/filament-announcements?style=flat-square" alt="PHP Version"> 
 </a> 
-<a href="https://github.com/HasanYagout/announcement/blob/main/LICENSE"> 
+<a href="https://github.com/HasanYagout/filament-announcements/blob/main/LICENSE"> 
     <img src="https://img.shields.io/github/license/HasanYagout/announcement?style=flat-square" alt="License"> 
 </a>
     
