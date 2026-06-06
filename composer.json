@@ -16,10 +16,10 @@
         "announcement"
     ],
     "type": "library",
-    "homepage": "https://github.com/hasanyagout/announcement",
+    "homepage": "https://github.com/HasanYagout/filament-announcement",
     "support": {
-        "issues": "https://github.com/hasanyagout/announcement/issues",
-        "source": "https://github.com/hasanyagout/announcement"
+        "issues": "https://github.com/HasanYagout/filament-announcement/issues",
+        "source": "https://github.com/HasanYagout/filament-announcement"
     },
     "license": "MIT",
     "authors": [
