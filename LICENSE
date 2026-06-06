@@ -1,6 +1,6 @@
 The MIT License (MIT)
 
-Copyright (c) HasanYagout <yagouthasan3@gmail.com>
+Copyright (c) Hasan Yagout
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

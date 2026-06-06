@@ -1,9 +1,22 @@
 # Filament Announcement
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/hasanyagout/announcement.svg?style=flat-square)](https://packagist.org/packages/hasanyagout/announcement)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/hasanyagout/announcement/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/hasanyagout/announcement/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/hasanyagout/announcement/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/hasanyagout/announcement/actions?query=workflow%3A"Fix+PHP+code+styling"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/hasanyagout/announcement.svg?style=flat-square)](https://packagist.org/packages/hasanyagout/announcement)
+<p align="center">
+    <a href="https://packagist.org/packages/hasanyagout/filament-announcements">
+            <img src="https://img.shields.io/packagist/v/hasanyagout/filament-announcements?style=flat-square" alt="Latest Version" />
+    </a>
+
+<a href="https://packagist.org/packages/hasanyagout/filament-announcements"> 
+        <img src="https://img.shields.io/packagist/dt/hasanyagout/filament-announcements?style=flat-square" alt="Total Downloads">
+</a>
+<a href="https://packagist.org/packages/hasanyagout/filament-announcements">
+    <img src="https://img.shields.io/packagist/php-v/hasanyagout/filament-announcements?style=flat-square" alt="PHP Version"> 
+</a> 
+<a href="https://github.com/HasanYagout/filament-announcement/blob/main/LICENSE"> 
+    <img src="https://img.shields.io/github/license/HasanYagout/filament-announcement?style=flat-square" alt="License"> 
+</a>
+    
+</p>
+
 
 A powerful Filament plugin for broadcasting announcements to all users or specific recipients with support for scheduling, dismissible alerts, live updates, and custom recipient models.
 
@@ -30,7 +43,7 @@ A powerful Filament plugin for broadcasting announcements to all users or specif
 Install the package via Composer:
 
 ```bash
-composer require hasanyagout/announcement
+composer require hasanyagout/filament-announcements
 ```
 
 > [!IMPORTANT]
@@ -42,7 +55,7 @@ composer require hasanyagout/announcement
 After setting up a custom theme, add the plugin views to your theme CSS file:
 
 ```css
-@source '../../../../vendor/hasanyagout/announcement/resources/**/*.blade.php';
+@source '../../../../vendor/hasanyagout/announcements/resources/**/*.blade.php';
 ```
 
 Publish and run migrations:
@@ -251,7 +264,6 @@ Please review [our security policy](.github/SECURITY.md) on how to report securi
 ## Credits
 
 - [Hasan Yagout](https://github.com/HasanYagout)
-- [All Contributors](../../contributors)
 
 ---
 
