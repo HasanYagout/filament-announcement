@@ -36,18 +36,8 @@ class AnnouncementServiceProvider extends PackageServiceProvider
             ]);
     }
 
-    public function boot(): void
+    public function boot()
     {
-        $this->loadViewsFrom(
-            __DIR__ . '/../resources/views',
-            'announcements'
-        );
-
-        $this->loadTranslationsFrom(
-            __DIR__ . '/../resources/lang',
-            'announcements'
-        );
-
         $this->publishes([
             __DIR__.'/../database/migrations' => database_path('migrations'),
         ], 'announcement-migrations');
