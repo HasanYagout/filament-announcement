@@ -47,8 +47,9 @@ class AnnouncementServiceProvider extends PackageServiceProvider
             __DIR__ . '/../resources/lang',
             'announcements'
         );
-        $this->publishesMigrations([
+
+        $this->publishes([
             __DIR__.'/../database/migrations' => database_path('migrations'),
-        ]);
+        ], 'announcement-migrations');
     }
 }
