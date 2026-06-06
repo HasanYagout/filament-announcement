@@ -36,11 +36,5 @@ class AnnouncementServiceProvider extends PackageServiceProvider
             ]);
     }
 
-    public function boot(): void
-    {
 
-        $this->publishes([
-            __DIR__.'/../database/migrations' => database_path('migrations'),
-        ], 'announcement-migrations');
-    }
 }
