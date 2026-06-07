@@ -52,17 +52,7 @@ class AnnouncementPlugin implements Plugin
             )
         );
     }
-    public function withDatabaseNotifications(bool $enabled = true): static
-    {
-        $this->databaseNotifications = $enabled;
-        return $this;
-    }
 
-    public function withCustomRecipients(array $models): static
-    {
-        $this->customRecipientModels = $models;
-        return $this;
-    }
 
 
     public function pollingInterval(string $interval): static

@@ -35,6 +35,18 @@ class AnnouncementServiceProvider extends PackageServiceProvider
                 'create_announcement_recipients_table',
             ]);
     }
+    public function boot()
+    {
+        // Register views namespace
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'announcements');
+        $this->bootPackageConfigs();
+        $this->bootPackageTranslations();
+        $this-> bootPackageViews();
+        // Your existing publishes, etc.
+        $this->publishes([
+            __DIR__.'/../database/migrations' => database_path('migrations'),
+        ], 'announcement-migrations');
+    }
 
 
 }
