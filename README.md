@@ -223,13 +223,6 @@ The plugin supports Laravel Policies.
 
 Example policy registration:
 
-```php
-protected $policies = [
-    \HasanYagout\Announcement\Models\Announcement::class =>
-        \HasanYagout\Announcement\Policies\AnnouncementPolicy::class,
-];
-```
-
 ---
 
 ## Screenshots
