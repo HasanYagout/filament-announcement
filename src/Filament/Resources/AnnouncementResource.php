@@ -191,11 +191,11 @@ class AnnouncementResource extends Resource
     {
         return $table->columns([
             TextColumn::make('title')
-                ->label(__('filament.table.columns.title'))
+                ->label(__('announcements::filament.table.columns.title'))
                 ->searchable()
                 ->sortable(),
             TextColumn::make('recipient_labels')
-                ->label(__('filament.table.columns.recipients'))
+                ->label(__('announcement::filament.table.columns.recipients'))
                 ->badge()
                 ->state(function ($record) {
 
