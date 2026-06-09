@@ -32,17 +32,17 @@ class AnnouncementResource extends Resource
     protected static ?string $model = Announcement::class;
     public static function getNavigationLabel(): string
     {
-        return __('filament.navigation.plural');
+        return __('announcement::filament.navigation.plural');
     }
     protected static string|\BackedEnum|null $navigationIcon = Heroicon::OutlinedMegaphone;
     public static function getModelLabel(): string
     {
-        return __('filament.navigation.model');
+        return __('announcement::filament.navigation.model');
     }
 
     public static function getPluralModelLabel(): string
     {
-        return __('filament.navigation.plural');
+        return __('announcement::filament.navigation.plural');
     }
     protected static function passesPackagePermissionCheck(): bool
     {
@@ -98,16 +98,16 @@ class AnnouncementResource extends Resource
         return $schema
             ->columns(2)
             ->components([
-                Section::make(__('filament.sections.announcement'))
+                Section::make(__('announcement::filament.sections.announcement'))
                     ->schema([
                         TextInput::make('title')
-                            ->label(__('filament.form.title.label'))
+                            ->label(__('announcement::filament.form.title.label'))
                             ->required()
                             ->columnSpan(3)
                             ->maxLength(255),
 
                         RichEditor::make('body')
-                            ->label(__('filament.form.body.label'))
+                            ->label(__('announcement::filament.form.body.label'))
                             ->required()
                             ->columnSpanFull(),
 
@@ -115,7 +115,7 @@ class AnnouncementResource extends Resource
 
 
                         Select::make('type')
-                            ->label(__('filament.form.type.label'))
+                            ->label(__('announcement::filament.form.type.label'))
                             ->options(
                                 collect(AnnouncementType::cases())
                                     ->mapWithKeys(fn (AnnouncementType $type) => [
@@ -125,29 +125,29 @@ class AnnouncementResource extends Resource
                             ->required()
                             ->native(false),
                         DateTimePicker::make('starts_at')
-                            ->label(__('filament.form.starts_at.label')),
+                            ->label(__('announcement::filament.form.starts_at.label')),
 
                         DateTimePicker::make('ends_at')
-                            ->label(__('filament.form.ends_at.label')),
+                            ->label(__('announcement::filament.form.ends_at.label')),
                         Toggle::make('is_active')
-                            ->label(__('filament.form.is_active.label'))
+                            ->label(__('announcement::filament.form.is_active.label'))
                             ->default(true),
 
                         Toggle::make('is_dismissible')
-                            ->label(__('filament.form.is_dismissible.label'))
+                            ->label(__('announcement::filament.form.is_dismissible.label'))
                             ->default(true),
 
                         Toggle::make('is_global')
-                            ->label(__('filament.form.is_global.label'))
+                            ->label(__('announcement::filament.form.is_global.label'))
                             ->live(),
                     ])
                     ->columns(3),
 
-                Section::make(__('filament.sections.recipients'))
+                Section::make(__('announcement::filament.sections.recipients'))
                     ->hidden(fn (Get $get) => $get('is_global'))
                     ->schema([
                         Select::make('recipient_type')
-                            ->label(__('filament.form.recipient_type.label'))
+                            ->label(__('announcement::filament.form.recipient_type.label'))
                             ->live()
                             ->options(
                                 collect(config('announcement.recipient_models'))
@@ -191,7 +191,7 @@ class AnnouncementResource extends Resource
     {
         return $table->columns([
             TextColumn::make('title')
-                ->label(__('announcements::filament.table.columns.title'))
+                ->label(__('announcement::filament.table.columns.title'))
                 ->searchable()
                 ->sortable(),
             TextColumn::make('recipient_labels')
@@ -212,19 +212,19 @@ class AnnouncementResource extends Resource
                 }),
 
             IconColumn::make('is_active')
-                ->label(__('filament.table.columns.is_active'))
+                ->label(__('announcement::filament.table.columns.is_active'))
                 ->boolean(),
 
             TextColumn::make('starts_at')
-                ->label(__('filament.table.columns.starts_at'))
+                ->label(__('announcement::filament.table.columns.starts_at'))
                 ->dateTime(),
 
             TextColumn::make('ends_at')
-                ->label(__('filament.table.columns.ends_at'))
+                ->label(__('announcement::filament.table.columns.ends_at'))
                 ->dateTime(),
 
             TextColumn::make('created_at')
-                ->label(__('filament.table.columns.created_at'))
+                ->label(__('announcement::filament.table.columns.created_at'))
                 ->since(),
         ])
             ->modifyQueryUsing(fn ($query) => $query->with('recipients'))
