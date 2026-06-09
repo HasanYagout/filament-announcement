@@ -20,7 +20,9 @@ return [
         'type' => [
             'label' => 'Type',
         ],
-
+        'recipient_ids' => [
+            'label' => 'Recipient',
+        ],
         'is_active' => [
             'label' => 'Active',
         ],

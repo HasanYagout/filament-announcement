@@ -13,10 +13,10 @@ enum AnnouncementType: string
     {
         
         return match ($this) {
-            self::Info => __('types.info'),
-            self::Warning => __('types.warning'),
-            self::Danger => __('types.danger'),
-            self::Success => __('types.success'),
+            self::Info => __('announcement::types.info'),
+            self::Warning => __('announcement::types.warning'),
+            self::Danger => __('announcement::types.danger'),
+            self::Success => __('announcement::types.success'),
         };
     }
 }

@@ -24,6 +24,9 @@ return [
         'is_active' => [
             'label' => 'نشط',
         ],
+        'recipient_ids' => [
+            'label' => 'المستلمين',
+        ],
 
         'is_dismissible' => [
             'label' => 'قابل للإخفاء',

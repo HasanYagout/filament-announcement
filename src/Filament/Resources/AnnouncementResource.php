@@ -159,6 +159,7 @@ class AnnouncementResource extends Resource
                             ->required(),
 
                         Select::make('recipient_ids')
+                            ->label(__('announcement::filament.form.recipient_ids.label'))
                             ->multiple()
                             ->options(function (Get $get) {
 
