@@ -47,8 +47,8 @@ class GlobalAnnouncementBanner extends Component
 
         $user = auth()->user();
 
-        $user->announcements()->updateExistingPivot($id, [
-            'dismissed_at' => now(),
+        $user->announcements()->syncWithoutDetaching([
+            $id => ['dismissed_at' => now()]
         ]);
     }
 
