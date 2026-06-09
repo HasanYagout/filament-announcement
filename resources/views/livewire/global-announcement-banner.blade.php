@@ -71,7 +71,6 @@
                             <x-filament::icon-button
                                 color="gray"
                                 icon="heroicon-o-x-mark"
-                                :label="__('announcements::widget.dismiss')"
                                 wire:click="dismiss({{ $announcement->id }})"
                             />
                         </div>
