@@ -62,6 +62,7 @@ class AnnouncementPlugin implements Plugin
         return $this;
     }
 
+
     public function getPollingInterval(): string
     {
         return $this->pollingInterval;

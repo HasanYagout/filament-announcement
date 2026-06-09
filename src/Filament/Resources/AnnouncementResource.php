@@ -7,6 +7,7 @@ use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\RichEditor;
+use Illuminate\Support\Facades\Gate;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
@@ -24,6 +25,7 @@ use HasanYagout\Announcement\Filament\Resources\Pages\CreateAnnouncement;
 use HasanYagout\Announcement\Filament\Resources\Pages\EditAnnouncement;
 use HasanYagout\Announcement\Filament\Resources\Pages\ListAnnouncements;
 use HasanYagout\Announcement\Models\Announcement;
+use Illuminate\Database\Eloquent\Model;
 
 class AnnouncementResource extends Resource
 {
@@ -41,6 +43,55 @@ class AnnouncementResource extends Resource
     public static function getPluralModelLabel(): string
     {
         return __('announcements::filament.navigation.plural');
+    }
+    protected static function passesPackagePermissionCheck(): bool
+    {
+        $check = config('announcement.permission_check');
+
+        if ($check === null) {
+            return true;
+        }
+
+        $user = auth()->user();
+
+        if ($user === null) {
+            return false;
+        }
+
+        if (is_string($check)) {
+            return Gate::forUser($user)->allows($check);
+        }
+
+        if ($check instanceof \Closure) {
+            return (bool) $check($user);
+        }
+
+        return false;
+    }
+
+    public static function canViewAny(): bool
+    {
+        return static::passesPackagePermissionCheck() && parent::canViewAny();
+    }
+
+    public static function canCreate(): bool
+    {
+        return static::passesPackagePermissionCheck() && parent::canCreate();
+    }
+
+    public static function canEdit(Model $record): bool
+    {
+        return static::passesPackagePermissionCheck() && parent::canEdit($record);
+    }
+
+    public static function canDelete(Model $record): bool
+    {
+        return static::passesPackagePermissionCheck() && parent::canDelete($record);
+    }
+
+    public static function canDeleteAny(): bool
+    {
+        return static::passesPackagePermissionCheck() && parent::canDeleteAny();
     }
     public static function form(Schema $schema): Schema
     {
