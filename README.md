@@ -87,7 +87,7 @@ php artisan vendor:publish --tag="announcement-views"
 
 ## Setup
 
-Register the plugin inside your Filament panel provider:
+1. Register the plugin inside your Filament panel provider:
 
 ```php
 use HasanYagout\Announcement\AnnouncementPlugin;
@@ -98,6 +98,17 @@ public function panel(Panel $panel): Panel
         ->plugins([
             AnnouncementPlugin::make(),
         ]);
+}
+```
+
+2. Add the trait to your User model:
+
+```php
+use HasanYagout\Announcement\Traits\HasAnnouncements;
+
+class User extends Authenticatable
+{
+    use HasAnnouncements;
 }
 ```
 
