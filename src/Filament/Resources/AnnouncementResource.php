@@ -34,6 +34,10 @@ class AnnouncementResource extends Resource
     {
         return __('announcement::filament.navigation.plural');
     }
+    public static function getNavigationGroup(): ?string
+    {
+        return __(config('announcement.navigation_group'));
+    }
     protected static string|\BackedEnum|null $navigationIcon = Heroicon::OutlinedMegaphone;
     public static function getModelLabel(): string
     {
