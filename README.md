@@ -21,6 +21,16 @@
 A powerful Filament plugin for broadcasting announcements to all users or specific recipients with support for scheduling, dismissible alerts, live updates, and custom recipient models.
 
 ---
+## Screenshots
+
+### List View
+![List Announcements](img/list.png)
+
+### Create Announcement
+![Create Announcement](img/create.png)
+
+### Edit Announcement
+![Edit Announcement](img/edit.png)
 
 ## Features
 
