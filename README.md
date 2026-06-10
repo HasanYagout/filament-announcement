@@ -55,7 +55,7 @@ composer require hasanyagout/filament-announcements
 After setting up a custom theme, add the plugin views to your theme CSS file:
 
 ```css
-@source '../../../../vendor/hasanyagout/announcements/resources/**/*.blade.php';
+@source '../../../../vendor/hasanyagout/filament-announcements/resources/**/*.blade.php';
 ```
 
 Publish and run migrations:
