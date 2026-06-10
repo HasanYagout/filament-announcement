@@ -158,21 +158,6 @@ AnnouncementPlugin::make()
 
 ---
 
-## Custom Recipient Models
-
-You can register custom recipient models dynamically:
-
-```php
-AnnouncementPlugin::make()
-    ->withCustomRecipients([
-        App\Models\User::class => [
-            'label' => 'Users',
-            'title_attribute' => 'name',
-        ],
-    ])
-```
-
----
 
 ## Announcement Types
 
@@ -232,18 +217,6 @@ Supported via polymorphic recipient relationships.
 The plugin supports Laravel Policies.
 
 Example policy registration:
-
----
-
-## Screenshots
-
-Add screenshots here later.
-
-Example:
-
-```md
-![Announcements](docs/images/announcements.png)
-```
 
 ---
 
