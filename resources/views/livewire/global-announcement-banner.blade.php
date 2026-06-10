@@ -3,7 +3,7 @@
 <div
     class="fi-global-announcements space-y-3 overflow-y-auto"
     wire:poll.{{ $this->pollingInterval }}
-    style="position: relative; z-index: 50; max-height: 100px"
+    style="position: relative; z-index: 50; max-height: 100px;overflow:auto;"
 >
     @foreach($this->announcements as $announcement)
 
