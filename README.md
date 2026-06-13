@@ -71,26 +71,26 @@ After setting up a custom theme, add the plugin views to your theme CSS file:
 Publish and run migrations:
 
 ```bash
-php artisan vendor:publish --tag="announcement-migrations"
+php artisan vendor:publish --tag="announcements-migrations"
 php artisan migrate
 ```
 
 Publish the config file:
 
 ```bash
-php artisan vendor:publish --tag="announcement-config"
+php artisan vendor:publish --tag="announcements-config"
 ```
 
 Optionally publish translations:
 
 ```bash
-php artisan vendor:publish --tag="announcement-translations"
+php artisan vendor:publish --tag="announcements-translations"
 ```
 
 Optionally publish views:
 
 ```bash
-php artisan vendor:publish --tag="announcement-views"
+php artisan vendor:publish --tag="announcements-views"
 ```
 
 ---
