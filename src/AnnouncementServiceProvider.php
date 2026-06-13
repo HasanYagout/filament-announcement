@@ -18,9 +18,9 @@ use HasanYagout\Announcement\Testing\TestsAnnouncement;
 
 class AnnouncementServiceProvider extends PackageServiceProvider
 {
-    public static string $name = 'announcement';
+    public static string $name = 'announcements';
 
-    public static string $viewNamespace = 'announcement';
+    public static string $viewNamespace = 'announcements';
 
     public function configurePackage(Package $package): void
     {
