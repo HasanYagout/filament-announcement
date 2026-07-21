@@ -229,12 +229,12 @@ class AnnouncementResource extends Resource
                 ->label(__('announcements::filament.table.columns.created_at'))
                 ->since(),
         ])
-            ->modifyQueryUsing(fn ($query) => $query->with('recipients'))
-            ->actions([
+            ->modifyQueryUsing(fn ($query) => $query->with('recipients')->orderBy('created_at', 'desc'))
+            ->recordActions([
                 EditAction::make(),
                 DeleteAction::make(),
             ])
-            ->bulkActions([
+            ->toolbarActions([
                 DeleteBulkAction::make(),
             ]);
     }
