@@ -168,25 +168,22 @@ class AnnouncementResource extends Resource
                             ->options(function (Get $get) {
 
                                 $model = $get('recipient_type');
-
-                                if (! $model) {
-                                    return [];
-                                }
+                                if (! $model) return [];
 
                                 $config = config("announcement.recipient_models.{$model}");
+                                if (! $config) return [];
 
-                                if (! $config) {
-                                    return [];
-                                }
+                                $titleAttribute = $config['title_attribute'] ?? 'name';
 
-                                $titleAttribute = $config['title_attribute'];
-
-                                return $model::query()
+                                $options = $model::query()
                                     ->get()
                                     ->mapWithKeys(fn ($record) => [
-                                        $record->id => $record->{$titleAttribute},
+                                        $record->getKey() => $record->{$titleAttribute}
                                     ])
                                     ->toArray();
+
+
+                                return $options;
                             }),
                     ]),
             ]);
