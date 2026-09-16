@@ -27,7 +27,7 @@ class AnnouncementServiceProvider extends PackageServiceProvider
 
         $package
             ->name(static::$name)
-            ->hasConfigFile()
+            ->hasConfigFile('announcement')
             ->hasViews()
             ->hasTranslations()
             ->hasMigrations([
